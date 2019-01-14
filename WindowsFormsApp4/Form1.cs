@@ -35,8 +35,16 @@ namespace WindowsFormsApp4
                 Image i = Image.FromFile("London.jpg");
                 label1.Image = i;
                 var a = dateTime.Hour + 4;
-                DateTime dateTime1 = new DateTime(dateTime.Year, dateTime.Month, dateTime.Day, a, dateTime.Minute, dateTime.Second);
-                label1.Text = dateTime1.ToString();
+                if (dateTime.Hour == 05)
+                {
+                    DateTime dateTime1 = new DateTime(dateTime.Year, dateTime.Month+1, dateTime.Day, a, dateTime.Minute, dateTime.Second);
+                    label1.Text = dateTime1.ToString();
+                }
+                else
+                {
+                    DateTime dateTime1 = new DateTime(dateTime.Year, dateTime.Month, dateTime.Day, a, dateTime.Minute, dateTime.Second);
+                    label1.Text = dateTime1.ToString();
+                }
             }
         }
         private void Baku_Button_Click(object sender, EventArgs e)
